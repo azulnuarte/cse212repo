@@ -7,14 +7,22 @@ public static class Arrays
     /// </summary>
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
-    {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+{
+    // 1. Create an array with a size equal to the given length.
+    // 2. Use a for loop to go through each position of the array.
+    // 3. Calculate each multiple by multiplying the number by the current position plus 1.
+    // 4. Store each multiple in the corresponding position of the array.
+    // 5. Return the completed array.
 
-        return []; // replace this return statement with your own
+    double[] mNum = new double[length];
+
+    for (int i = 0; i < length; i++)
+    {
+        mNum[i] = number * (i + 1);
     }
+
+    return mNum;
+}
 
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
@@ -24,10 +32,14 @@ public static class Arrays
     /// Because a list is dynamic, this function will modify the existing data list rather than returning a new list.
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
-    {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+   {
+        
+// 1. Get the last 'amount' elements from the list and store them in a separate list.
+// 2. Remove those elements from the original list.
+// 3. Insert the stored elements at the beginning of the original list.
+        List<int> lastNumbers = data.GetRange(data.Count - amount, amount);
+        data.RemoveRange(data.Count - amount, amount);
+        data.InsertRange(0, lastNumbers);
+
     }
 }

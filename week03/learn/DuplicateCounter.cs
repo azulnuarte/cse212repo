@@ -22,9 +22,20 @@
         Console.WriteLine($"Number of duplicates : {CountDuplicates(data)}");
     }
 
-    private static int CountDuplicates(int[] data)
+   private static int CountDuplicates(int[] data)
+ {
+    var seen = new HashSet<int>();
+    int duplicateCount = 0;
+
+    foreach (var number in data)
     {
-        // Add code here.
-        return 0;
+        if (!seen.Add(number))
+        {
+            // Add devuelve false si el número ya estaba en el set
+            duplicateCount++;
+        }
     }
+
+    return duplicateCount;
+ }
 }
